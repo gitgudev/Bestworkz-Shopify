@@ -1,0 +1,132 @@
+<div class="container-fluid" style="  background: url({{ section.settings.image_bg | img_url: 'master' }}); background-size: cover;  background-repeat: no-repeat;" >
+    <div class="mcw-container__wrapper">
+        <div class="mcw__wrapper--items">
+            <h1 class="mcw-head">{{section.settings.head}}</h1>
+            <h4 class="mcw-head4">{{section.settings.subhead}}</h4>
+            <p class="mcw-paragraph">{{section.settings.paragraph}}</p>
+           <div class="mcw-button-primary {% if section.settings.show_btn == true %} hide-btn {% endif %}">
+            <a href ="{{section.settings.button_link}}" class="primary-btn">{{section.settings.button_label}} {% render 'icon-arrow-r' %}</a> 
+           </div>
+        </div>
+        <div class="mcw__block--container">
+            <div class="mcw__block--wrapper">
+                {% for block in section.blocks %}
+                <img src="{{ block.settings.icon | img_url: 'master'}}" class="icon-img" alt=""> 
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .mcw-container__wrapper {
+    max-width: 1600px;
+    width: 100%;
+    margin: auto;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+}
+.mcw__block--container {
+    position: absolute;
+    bottom: 30px;
+    transform: translate(50%, -50%);
+    left: 0;
+}
+.mcw__block--wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+.mcw__block--container {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+a.primary-btn {
+    padding: 15px 25px;
+    text-decoration: unset;
+    color: #000;
+    background: #fff;
+    font-weight: 600;
+        font-size: 14px;
+    border: solid 2px;
+}
+p.mcw-paragraph {
+    color: #fff;
+    font-size: 25px;
+    width: 55%;
+    font-weight: 300;
+    line-height: 40px;
+    margin-top: 20px;
+}
+h1.mcw-head {
+    font-size: 65px;
+    width: 70%;
+    margin-bottom: 0px;
+    color: #fff;
+    line-height: 60px;
+}
+svg.icon--arrow {
+    margin-left: 15px;
+}
+
+</style>
+
+{% schema %}
+{
+   "name": "Hero Banner",
+  "class": "mcw-herobanner",
+ "settings": [
+    {
+        "type": "image_picker",
+        "id": "image_bg",
+        "label": "Image Background"
+    },
+   {
+    "type": "text",
+    "id": "head",
+    "label": "label",
+    "default": "Style that doesn't break the bank"
+   },
+  {
+    "type": "text",
+    "id": "paragraph",
+    "label": "Sub heading",
+    "default": "We believe in great design, deep conversations, and powerful connections."
+  },
+ {
+    "type": "text",
+    "id": "button_label",
+    "label": "Button Label",
+    "default": "SHOP WATCHES"
+ },
+{
+    "type": "url",
+    "id": "button_link",
+    "label": "Button Link"
+}
+],
+"blocks": [
+{
+    "type": "icon",
+   "name": "icons",
+  "settings": [
+    {
+     "type": "image_picker",
+     "id": "icon",
+     "label": "icon image"
+    }
+  ]
+ }
+],
+"presets": [
+    {
+        "category": "Banner",
+        "name":"Hero Banner"
+    }
+]
+}
+{% endschema %}

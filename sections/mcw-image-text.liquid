@@ -1,0 +1,99 @@
+<div class="container-fluid">
+    <div class="container--wrapper d-flex">
+        <div class="wrapper--items mcw-column-image">
+            <img src="{{section.settings.image | img_url: 'master'}}" |  class="image-lg" alt="">
+        </div>
+        <div class="wrapper--items mcw-column-text">
+              <div class="mcw-column-details-wrap">
+                <div class="icon-wrapper">
+                    <img src="{{"icon-star.png" | asset_img_url: 'master'}}" class="icon-star" alt="">
+                  </div>
+                <h2 class="mcw-head2">{{section.settings.head}}</h2>
+                <p class="mcw-paragraph">{{section.settings.content}}</p>
+                <p class="mcw-reviewer">{{section.settings.reviewer}}</p>
+              </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.d-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mcw-column-details-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 60%;
+    margin: auto;
+}
+.mcw-column-text .mcw-paragraph {
+    color: #000;
+    font-size: 15px;
+    line-height: 30px;
+    text-align: left;
+    width: 100%;
+}
+.mcw-column-image, .mcw-column-text {
+    width: 50%;
+}
+h2.mcw-head2 {
+    font-size: 31px;
+    margin: 0 auto 0 0;
+    width: 85%;
+}
+.icon-wrapper {
+    display: flex;
+}
+p.mcw-reviewer {
+    font-weight: 600;
+    color: #000;
+    display: flex;
+}
+p.mcw-reviewer:after {
+    content: url(https://cdn.shopify.com/s/files/1/0667/4219/0306/files/Group_112_1.png?v=1663855249);
+    margin-left: 15px;
+}
+img.image-lg {
+    width: 100%;
+}
+</style>
+
+{% schema %}
+{
+   "name": "Image and Text",
+  "settings": [
+   {
+    "type": "image_picker",
+    "id": "image",
+    "label": "Column Image"
+   },
+  {
+    "type": "text",
+    "id": "head",
+    "label": "Heading",
+    "default": "Mancini has excellent watches that I love wearing."
+  },
+ {
+    "type": "textarea",
+    "id": "content",
+    "label": "Content",
+    "default": "I have bought six from them so far, all very elegant and comfortable. Customer service has been great from the Community Leader Nicole Ader and Aljon at Mancini Support. They both answered all my email queries. The shipment was prompt and all items arrived in excellent condition for both my orders."
+ },
+{
+    "type": "text",
+    "id": "reviewer",
+    "label": "Reviewer",
+    "default": "Mahendra K."
+}
+  ],
+ "presets": [
+    {
+        "category": "Image",
+        "name":"Image & Text"
+    }
+ ]
+}
+{% endschema %}

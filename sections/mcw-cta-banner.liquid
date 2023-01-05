@@ -1,0 +1,93 @@
+<div class="container-fluid" style="  background: url({{ section.settings.image_bg | img_url: 'master' }}); background-size: cover;  background-repeat: no-repeat;" >
+    <div class="mcw-cta-container__wrapper">
+        <div class="mcw__cta-wrapper--items">
+            <h1 class="mcw-cta-head">{{section.settings.head}}</h1>
+            <p class="mcw-cta-paragraph">{{section.settings.paragraph}}</p>
+           <div class="mcw-button-primary {% if section.settings.show_btn == true %} hide-btn {% endif %}">
+            <a href ="{{section.settings.button_link}}" class="primary-btn">{{section.settings.button_label}} {% render 'icon-arrow-r' %}</a> 
+           </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .mcw-cta-container__wrapper {
+    max-width: 1600px;
+    width: 100%;
+    margin: auto;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mcw__cta-wrapper--items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1.mcw-cta-head {
+    color: #fff;
+    font-size: 51px;
+    width: 33%;
+    margin: auto;
+    text-align: center;
+    font-weight: 700;
+}
+p.mcw-cta-paragraph {
+    color: #fff;
+    font-size: 23px;
+    width: 40%;
+    text-align: center;
+}
+.cta-banner-section .primary-btn {
+    padding: 15px 25px;
+    text-decoration: unset;
+    color: #000;
+    background: #fff;
+    font-weight: 600;
+    display: inline-block;
+}
+</style>
+
+{% schema %}
+{
+   "name": "CTA Banner",
+  "class": "cta-banner-section",
+ "settings": [
+    {
+        "type": "image_picker",
+        "id": "image_bg",
+        "label": "Image Background"
+    },
+   {
+    "type": "text",
+    "id": "head",
+    "label": "label",
+    "default": "Wear something with meaning."
+   },
+  {
+    "type": "text",
+    "id": "paragraph",
+    "label": "Sub heading",
+    "default": "It is more than a watch, it is a conversation piece. Each timepiece is handcrafted with love just for you. Find your perfect match here."
+  },
+ {
+    "type": "text",
+    "id": "button_label",
+    "label": "Button Label",
+    "default": "SHOP WATCHES"
+ },
+{
+    "type": "url",
+    "id": "button_link",
+    "label": "Button Link"
+}
+],
+"presets": [
+    {
+        "category": "Banner",
+        "name":"CTA Banner"
+    }
+]
+}
+{% endschema %}

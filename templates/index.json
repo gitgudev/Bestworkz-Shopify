@@ -1,0 +1,38 @@
+{
+  "sections": {
+    "16638536522c716a91": {
+      "type": "mcw-herobanner",
+      "settings": {
+        "image_bg": "shopify:\/\/shop_images\/Rectangle_1_1.png",
+        "head": "Style that doesn't break the bank",
+        "paragraph": "We believe in great design, deep conversations, and powerful connections.",
+        "button_label": "SHOP WATCHES",
+        "button_link": ""
+      }
+    },
+    "16638536592b3c2f8c": {
+      "type": "mcw-image-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Rectangle_23.png",
+        "head": "Mancini has excellent watches that I love wearing.",
+        "content": "I have bought six from them so far, all very elegant and comfortable. Customer service has been great from the Community Leader Nicole Ader and Aljon at Mancini Support. They both answered all my email queries. The shipment was prompt and all items arrived in excellent condition for both my orders.",
+        "reviewer": "Mahendra K."
+      }
+    },
+    "1663863219cc2a9e3a": {
+      "type": "mcw-cta-banner",
+      "settings": {
+        "image_bg": "shopify:\/\/shop_images\/Rectangle_34.png",
+        "head": "Wear something  with meaning.",
+        "paragraph": "It is more than a watch, it is a conversation piece. Each timepiece is handcrafted with love just for you. Find your perfect match here.",
+        "button_label": "SHOP WATCHES",
+        "button_link": ""
+      }
+    }
+  },
+  "order": [
+    "16638536522c716a91",
+    "16638536592b3c2f8c",
+    "1663863219cc2a9e3a"
+  ]
+}
